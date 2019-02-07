@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apt Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal code</th>
+      <th>Country</th>
+      <th>Manag name</th>
+      <th>Manag phone</th>
+      <th>Manag contact hrs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apt_listings.each do |apt_listing| %>
+      <tr>
+        <td><%= apt_listing.address_1 %></td>
+        <td><%= apt_listing.address_2 %></td>
+        <td><%= apt_listing.city %></td>
+        <td><%= apt_listing.state %></td>
+        <td><%= apt_listing.postal_code %></td>
+        <td><%= apt_listing.country %></td>
+        <td><%= apt_listing.manag_name %></td>
+        <td><%= apt_listing.manag_phone %></td>
+        <td><%= apt_listing.manag_contact_hrs %></td>
+        <td><%= link_to 'Show', apt_listing %></td>
+        <td><%= link_to 'Edit', edit_apt_listing_path(apt_listing) %></td>
+        <td><%= link_to 'Destroy', apt_listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apt Listing', new_apt_listing_path %>

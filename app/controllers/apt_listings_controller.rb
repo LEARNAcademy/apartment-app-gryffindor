@@ -1,6 +1,5 @@
 class AptListingsController < ApplicationController
   before_action :set_apt_listing, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
   # GET /apt_listings
   # GET /apt_listings.json
   def index

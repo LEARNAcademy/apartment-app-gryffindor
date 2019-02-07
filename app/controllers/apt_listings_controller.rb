@@ -1,6 +1,6 @@
 class AptListingsController < ApplicationController
   before_action :set_apt_listing, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /apt_listings
   # GET /apt_listings.json
   def index
@@ -24,7 +24,7 @@ class AptListingsController < ApplicationController
   # POST /apt_listings
   # POST /apt_listings.json
   def create
-    @apt_listing = AptListing.new(apt_listing_params)
+    @apt_listing = current_user.aptListing.new(apt_listing_params)
 
     respond_to do |format|
       if @apt_listing.save

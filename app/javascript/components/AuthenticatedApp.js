@@ -8,6 +8,7 @@ import {
 
 import Header from './pages/Header'
 import Listings from './pages/Listings'
+import NewApartment from './pages/NewApartment'
 
 class AuthenticatedApp extends React.Component {
   render () {
@@ -17,7 +18,7 @@ class AuthenticatedApp extends React.Component {
         <Router>
           <div>
             <Route path="/member" component={Listings} />
-            // <Route path="/header" component={Header} />
+            <Route path="/member" component={NewApartment} />
           </div>
         </Router>
       </div>
